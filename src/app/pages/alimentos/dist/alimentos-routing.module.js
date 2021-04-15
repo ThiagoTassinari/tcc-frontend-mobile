@@ -6,22 +6,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.FolderPage = void 0;
+exports.AlimentosPageRoutingModule = void 0;
 var core_1 = require("@angular/core");
-var FolderPage = /** @class */ (function () {
-    function FolderPage(activatedRoute) {
-        this.activatedRoute = activatedRoute;
+var router_1 = require("@angular/router");
+var alimentos_page_1 = require("./alimentos.page");
+var routes = [
+    {
+        path: '',
+        component: alimentos_page_1.AlimentosPage
     }
-    FolderPage.prototype.ngOnInit = function () {
-        this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    };
-    FolderPage = __decorate([
-        core_1.Component({
-            selector: 'app-folder',
-            templateUrl: './folder.page.html',
-            styleUrls: ['./folder.page.scss']
+];
+var AlimentosPageRoutingModule = /** @class */ (function () {
+    function AlimentosPageRoutingModule() {
+    }
+    AlimentosPageRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forChild(routes)],
+            exports: [router_1.RouterModule]
         })
-    ], FolderPage);
-    return FolderPage;
+    ], AlimentosPageRoutingModule);
+    return AlimentosPageRoutingModule;
 }());
-exports.FolderPage = FolderPage;
+exports.AlimentosPageRoutingModule = AlimentosPageRoutingModule;
