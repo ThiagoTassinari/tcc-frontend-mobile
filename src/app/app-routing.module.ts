@@ -4,13 +4,29 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'alimentos',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+    path: 'alimentos',
+    loadChildren: () => import('./pages/alimentos/alimentos.module').then( m => m.AlimentosPageModule)
+  },
+  {
+    path: 'receitas',
+    loadChildren: () => import('./pages/receitas/receitas.module').then( m => m.ReceitasPageModule)
+  },
+  {
+    path: 'estoque',
+    loadChildren: () => import('./pages/estoque/estoque.module').then( m => m.EstoquePageModule)
+  },
+  {
+    path: 'pedidos',
+    loadChildren: () => import('./pages/pedidos/pedidos.module').then( m => m.PedidosPageModule)
+  },
+  {
+    path: 'perdas',
+    loadChildren: () => import('./pages/perdas/perdas.module').then( m => m.PerdasPageModule)
+  },
 ];
 
 @NgModule({
