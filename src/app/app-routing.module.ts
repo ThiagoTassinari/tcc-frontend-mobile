@@ -4,21 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-<<<<<<< HEAD
-    redirectTo: 'folder/Alimentos',
-    pathMatch: 'full'
-  },
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
-    path: 'alimentos',
-    loadChildren: () => import('./pages/alimentos/alimentos.module').then( m => m.AlimentosPageModule)
-  }
-=======
     redirectTo: 'alimentos',
     pathMatch: 'full'
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
   {
     path: 'alimentos',
@@ -40,7 +31,10 @@ const routes: Routes = [
     path: 'perdas',
     loadChildren: () => import('./pages/perdas/perdas.module').then( m => m.PerdasPageModule)
   },
->>>>>>> c8f2db6fee223d5edbde9cb1ee35b07b9596a8d3
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
 ];
 
 @NgModule({
